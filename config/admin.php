@@ -5,7 +5,7 @@ return [
     /*
      * 站点标题
      */
-    'name' => '安源消防',
+    'name' => 'Laravel',
 
     /*
      * 页面顶部 Logo
