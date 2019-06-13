@@ -1,9 +1,9 @@
-<footer class="footer">
+<footer class="text-muted">
   <div class="container">
-    <p class="float-left">
-      由 <a href="https://leo108.com" target="_blank">Leo</a> 设计和编码 <span style="color: #e27575;font-size: 14px;">❤</span>
+    <p class="float-right">
+      <a href="#">Back to top</a>
     </p>
-
-    <p class="float-right"><a href="mailto:name@email.com">联系我们</a></p>
+    <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+    <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
   </div>
 </footer>
