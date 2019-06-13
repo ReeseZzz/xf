@@ -11652,3 +11652,31 @@ a.text-dark:focus {
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+.nav-index li {
+  font-size: 1rem;
+  margin-left: 2rem !important;
+}
+
+.nav-index li div {
+  width: 2rem;
+  height: 0.25rem;
+  margin: 0 auto;
+  display: table;
+}
+
+.nav-index li a:hover {
+  color: #0460D3 !important;
+}
+
+.nav-index li a:hover + div {
+  background-color: #0460D3;
+}
+
+.nav-index li a.active {
+  color: #0460D3 !important;
+}
+
+.nav-index li a.active + div {
+  background-color: #0460D3;
+}
+
