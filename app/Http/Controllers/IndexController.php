@@ -10,4 +10,9 @@ class IndexController extends Controller
     {
         return view('index.show');
     }
+
+    public function ay()
+    {
+        return view('index.show');
+    }
 }
