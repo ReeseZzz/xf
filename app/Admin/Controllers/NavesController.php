@@ -2,15 +2,15 @@
 
 namespace App\Admin\Controllers;
 
-use App\Models\Category;
 use App\Http\Controllers\Controller;
+use App\Models\Nav;
 use Encore\Admin\Controllers\HasResourceActions;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
 
-class CategoriesController extends Controller
+class NavesController extends Controller
 {
     use HasResourceActions;
 
@@ -62,7 +62,7 @@ class CategoriesController extends Controller
      */
     protected function grid()
     {
-        $grid = new Grid(new Category);
+        $grid = new Grid(new Nav);
 
         $grid->id('ID');
         $grid->title('分类名称');
@@ -70,7 +70,8 @@ class CategoriesController extends Controller
         $grid->is_show('是否展示')->display(function ($value) {
             return $value ? '是' : '否';
         });
-        $grid->order('排序')->sortable();
+        $grid->cover_url('封面')->image();
+        $grid->sort_num('排序')->sortable();
 
         $grid->created_at('添加时间');
 
@@ -97,12 +98,12 @@ class CategoriesController extends Controller
      */
     protected function form()
     {
-        $form = new Form(new Category);
+        $form = new Form(new Nav);
 
         $form->text('title', '分类名称')->rules('required',['required' => '请输入 分类名称']);
 
         $form->select('parent_id', '所属分类')->options(function ($id) {
-            $cate = Category::where('parent_id',0)->where('is_show',true)->get();
+            $cate = Nav::where('parent_id',0)->where('is_show',true)->get();
             $root = collect(['0' => '顶级分类']);
             if ($cate->isNotEmpty()) {
                 return $root->merge($cate->flatMap(function ($item){
@@ -114,7 +115,7 @@ class CategoriesController extends Controller
 
         $form->text('url', '链接地址')->default('#');
 
-        $form->number('order', '排序')->default(0)->help('数字正序排列');
+        $form->number('sort_num', '排序')->default(0)->help('数字正序排列');
 
         $form->switch('is_show', '是否展示')->states(function(){
             return  [
@@ -122,7 +123,30 @@ class CategoriesController extends Controller
                 'off' => ['value' => false, 'text' => '否', 'color' => 'danger'],
             ];
         });
+        $form->image('cover_url', '封面图片')->uniqueName();
+        // 两个时间显示
+        $form->display('created_at', '创建时间');
+        $form->display('updated_at', '修改时间');
 
+
+        $form->tools(function (Form\Tools $tools) {
+            // 去掉`删除`按钮
+            $tools->disableDelete();
+
+            // 去掉`查看`按钮
+            $tools->disableView();
+        });
+        $form->footer(function ($footer) {
+            // 去掉`查看`checkbox
+            $footer->disableViewCheck();
+
+            // 去掉`继续编辑`checkbox
+            $footer->disableEditingCheck();
+
+            // 去掉`继续创建`checkbox
+            $footer->disableCreatingCheck();
+
+        });
         return $form;
     }
 }

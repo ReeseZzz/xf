@@ -11652,6 +11652,10 @@ a.text-dark:focus {
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+body {
+  background-color: #FFFFFF !important;
+}
+
 .nav-index li {
   font-size: 1rem;
   margin-left: 2rem !important;
@@ -11686,5 +11690,101 @@ a.text-dark:focus {
   margin: 0 auto;
   display: table;
   background-color: #0460D3;
+}
+
+.read-more {
+  margin: 0.5rem auto 0;
+  display: table;
+}
+
+.case ul.row {
+  margin: 0 !important;
+}
+
+.case ul li .border-bottom-me {
+  border-bottom: 0.3rem solid #FFFFFF !important;
+}
+
+.case ul li .active .border-bottom-me {
+  border-bottom: 0.3rem solid #0460D3 !important;
+}
+
+.case ul li .border-bottom-me:hover {
+  border-bottom: 0.3rem solid #0460D3 !important;
+}
+
+.case ul li a {
+  color: #555555;
+}
+
+.case ul li a.active,
+.case ul li a:hover {
+  color: #0460D3 !important;
+  text-decoration: none !important;
+}
+
+.case ul li a.active img:first-child,
+.case ul li a:hover img:first-child {
+  opacity: 0;
+}
+
+.case ul li a.active img:last-child,
+.case ul li a:hover img:last-child {
+  opacity: 1;
+}
+
+.case ul li a.active h5,
+.case ul li a:hover h5 {
+  color: #0460D3 !important;
+}
+
+.case ul li a.active .card,
+.case ul li a:hover .card {
+  border-color: #0460D3;
+}
+
+.case .tab-pane .col-md-4:hover {
+  color: #0460D3 !important;
+}
+
+#nav-tabContent h4 {
+  font-size: 1.25rem;
+  color: #666666;
+}
+
+#nav-tabContent h5 {
+  color: #999999;
+}
+
+#nav-tabContent a:hover h4,
+#nav-tabContent a:hover h5 {
+  color: #0460D3 !important;
+}
+
+.home-product-icon {
+  position: relative;
+  display: block;
+  width: 4.1rem;
+  height: 4.1rem;
+  margin: 0 auto;
+}
+
+.home-product-icon .active-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+footer p {
+  color: #FFFFFF !important;
+}
+
+footer span {
+  color: #999999 !important;
+}
+
+footer .table td {
+  border-top: none;
 }
 
