@@ -13,21 +13,26 @@
             <div class="album">
                 <div class="container">
                     <div class="row">
-                        @foreach([1,2,3,4,5,6] as $v)
+                        @foreach($cases as $v)
                             <div class="col-md-4">
                                 <div class="card mb-4 box-shadow">
-                                    <img class="card-img-top" src="{{ asset('storage/common/case_img1.png') }}"
-                                         alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">武汉恒基达鑫国际化物流仓储园</h5>
-                                        <p class="card-text text-muted">地址：武汉市洪山区临江大道与化工五路路口西南角</p>
-                                    </div>
+                                    <a href="{{ route('cases.detail',['id'=>$v['id']]) }}">
+                                        <img class="card-img-top" src="{{ $v['cover_url'] }}"
+                                             alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ $v['title'] }}</h5>
+                                            <p class="card-text text-muted">地址：{{ $v['address'] }}</p>
+                                        </div>
+                                    </a>
+
                                 </div>
                             </div>
                         @endforeach
                         <div class="col-md-4"></div>
                         <div class="col-md-4">
+                            @if(count($cases)>=8 )
                             <button type="button" class="btn btn-lg btn-outline-secondary read-more">查看更多</button>
+                            @endif
                         </div>
                         <div class="col-md-4"></div>
                     </div>
@@ -147,10 +152,10 @@
                 {{--<div class="border-bottom-block"></div>--}}
             </div>
             <div class="row">
-                @foreach([1,2,3,4] as $v)
+                @foreach($cert as $v)
                     <div class="col-md-3">
                         <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="{{ asset('storage/common/certificate_img1.png') }}"
+                            <img class="card-img-top" src="{{ $v['url'] }}"
                                  alt="Card image cap">
                         </div>
                     </div>
@@ -188,10 +193,10 @@
             </div>
             <div class="album py-5">
                 <div class="row">
-                    @foreach([1,2,3,4,5,6] as $v)
-                        <div class="col-md-2">
+                    @foreach($logo as $v)
+                        <div class="col-md-{{ ceil(12/count($logo)) }}">
                             <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="{{ asset('storage/common/logo3_img.png') }}"
+                                <img class="card-img-top" src="{{ $v['url'] }}"
                                      alt="Card image cap">
                             </div>
                         </div>

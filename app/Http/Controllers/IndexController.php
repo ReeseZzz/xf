@@ -3,50 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Models\BusinessType;
-use App\Models\Nav;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\View;
+use App\Models\Cases;
+use App\Models\Resources;
 
 class IndexController extends Controller
 {
-    public function __construct()
-    {
-        $naves = Nav::all();
-        $current_nav = '';
-        foreach($naves as $v){
-            if ('/'.Route::current()->uri() == $v['url'] || Route::current()->uri() == '/'){
-                $current_nav = $v;
-                break;
-            }
-        }
-        $header = [
-            'logo' => asset('storage/common/logo.png'),
-            'nav' => $naves,
-            'current_nav' => $current_nav,
-        ];
-        $footer = [
-            'contact' => [
-                ['key'=>'全国统一服务热线：','value'=>'400-027-6898'],
-                ['key'=>'总部地址：','value'=>'中国.深圳.福田区梅林路63号'],
-                ['key'=>'邮编：','value'=>'518049'],
-                ['key'=>'联系人：','value'=>'洪女士'],
-                ['key'=>'电话：','value'=>'0551-63446902'],
-                ['key'=>'传真：','value'=>'0551-65898309'],
-                ['key'=>'邮编：','value'=>'230001'],
-                ['key'=>'地址：','value'=>'武汉市江汉区姑嫂树路12号南国·北都城市广场'],
-                ['key'=>'二维码','value'=> asset('storage/common/qrcode.png') ],
-            ],
-            'icp' => '安源消防发展有限公司 版权所有 联络我们 粤ICP备15063678号-8 版权所有归武汉资海所有'
-        ];
-        View::share(compact('header','footer'));
-    }
-
     public function index()
     {
-        $res = BusinessType::with('business')->get();
-        $businessType = collect($res)->chunk(4)->toArray();
-        return view('index.show',compact('businessType'));
+        $businessType = BusinessType::with('business')->get();
+        $businessType = collect($businessType)->chunk(4)->toArray();
+
+        $cases = Cases::limit(8)->get();
+
+        $logo = Resources::logo()->get();
+
+        $cert = Resources::cert()->get();
+
+        return view('index.show',compact('businessType','cases','logo','cert'));
     }
 
     public function about()
@@ -176,11 +149,7 @@ class IndexController extends Controller
         $business = collect($business)->chunk(4)->toArray();
         return view('index.show',compact('business'));
     }
-    public function cases()
-    {
-        $cats = BusinessType::with('cases')->get();
-        return view('cases.show',compact('cats'));
-    }
+
     public function business()
     {
         $business = BusinessType::with('business')->get();

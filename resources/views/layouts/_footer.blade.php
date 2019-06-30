@@ -1,4 +1,4 @@
-<footer style="background-image: url({{ asset('storage/common/footer.png') }});">
+<footer style="background-image: url({{ asset('images/footer.png') }});">
   <div class="container">
       <div class="row pt-5">
           <div class="col-md-4 text-left">

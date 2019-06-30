@@ -51,4 +51,23 @@ Route::group([
         $router->get('/{id}/edit', 'CasesController@edit');
         $router->put('/{id}', 'CasesController@update');
     });
+
+    Route::group([
+        'prefix'    => 'resources',
+    ], function (Router $router) {
+        $router->get('/', 'ResourceController@index');
+        $router->get('/create', 'ResourceController@create');
+        $router->post('/', 'ResourceController@store');
+        $router->get('/{id}/edit', 'ResourceController@edit');
+        $router->put('/{id}', 'ResourceController@update');
+    });
+    Route::group([
+        'prefix'    => 'config',
+    ], function (Router $router) {
+        $router->get('/', 'ConfigController@index');
+        $router->get('/create', 'ConfigController@create');
+        $router->post('/', 'ConfigController@store');
+        $router->get('/{id}/edit', 'ConfigController@edit');
+        $router->put('/{id}', 'ConfigController@update');
+    });
 });
