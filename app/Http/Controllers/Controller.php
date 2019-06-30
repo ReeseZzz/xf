@@ -21,13 +21,8 @@ class Controller extends BaseController
         $naves = Nav::all();
         $current_nav = '';
         foreach($naves as $v){
-            if($request->getUri() == '/'){
-                $current_nav = $v;
-                break;
-            }elseif(strpos(Route::current()->uri(),$v['url']) !== false){
-                $current_nav = $v;
-                break;
-            }
+            $current_nav = $v;
+            break;
         }
         $config = Configs::all()->flatMap(function($item){
             return [$item['key'] => ['name'=>$item['name'],'value'=>$item['value']]];

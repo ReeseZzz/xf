@@ -11788,3 +11788,90 @@ footer .table td {
   border-top: none;
 }
 
+.detail-title {
+  height: 26px;
+  color: #0460D3;
+  margin-top: 48px;
+  margin-bottom: 24px;
+}
+
+.detail .breif p {
+  font-size: 16px;
+  line-height: 32px;
+  color: #777;
+}
+
+.detail .breif img {
+  width: 670px;
+  height: 390px;
+}
+
+.detail-content {
+  font-size: 14px;
+  line-height: 32px;
+  color: #777;
+}
+
+.detail-prev {
+  width: 320px;
+  height: 90px;
+  margin-bottom: 30px;
+  border: 1px solid #ddd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-indent: 24px;
+  line-height: 1;
+}
+
+.detail-prev > * {
+  display: block;
+}
+
+.detail-prev .prev-text {
+  width: 100%;
+  font-size: 18px;
+  margin-top: 20px;
+  color: #999;
+}
+
+.detail-prev .prev-title {
+  width: 100%;
+  font-size: 16px;
+  color: #333;
+  margin-top: 16px;
+}
+
+.about {
+  line-height: 1;
+  display: block;
+  text-align: center;
+}
+
+.about .section-title {
+  font-size: 24px;
+  color: #000;
+  margin-top: 48px;
+}
+
+.about .sub-title {
+  color: #999;
+  font-size: 14px;
+  margin-top: 24px;
+}
+
+.about .desc {
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+  color: #666;
+}
+

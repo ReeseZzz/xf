@@ -147,7 +147,7 @@ class IndexController extends Controller
             ]
         ];
         $business = collect($business)->chunk(4)->toArray();
-        return view('index.show',compact('business'));
+        return view('about.show',compact('business'));
     }
 
     public function business()
