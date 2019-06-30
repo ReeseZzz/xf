@@ -21,19 +21,20 @@
                             @foreach($v['cases'] as $value)
                                 <div class="col-md-4">
                                     <div class="card mb-4 box-shadow">
-                                        <img class="card-img-top" src="{{ $value['cover_url'] }}"
-                                             alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">{{ $value['title'] }}</h5>
-                                            <p class="card-text text-muted">地址 : {{ $value['address'] }}</p>
-                                        </div>
+                                        <a href="{{ route('cases.detail',['id'=>$v['id']]) }}">
+                                            <img class="card-img-top" src="{{ $value['cover_url'] }}"
+                                                 alt="Card image cap">
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{ $value['title'] }}</h5>
+                                                <p class="card-text text-muted">地址 : {{ $value['address'] }}</p>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             @endforeach
                         </div>
                     </div>
                 @endforeach
-
             </div>
 
         </div>
