@@ -1,5 +1,6 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://cdn.bootcss.com/Swiper/4.5.0/css/swiper.min.css');
 // Variables
 @import 'variables';
 // Bootstrap
@@ -207,5 +208,115 @@ footer{
     line-height: 30px;
     text-align: center;
     color: #666;
+    .desc-img{
+      width: 1200px;
+      height: 400px;
+      display: block;
+      background-color: #ddd;
+    }
+  }
+  .desc-history{
+    width: 1200px;
+    height: 1px;
+    margin-top: 169px;
+    margin-bottom: 187px;
+    background-color: #ddd;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .dot{
+      width: 7px;
+      height: 7px;
+      display: block;
+      background-color: #bebebe;
+      border-radius: 50%;
+      position: relative;
+      &:hover{
+        color: #0460D3;
+      }
+      .text-wrapper{
+        width: 228px;
+      }
+      &.top {
+        .img{
+          bottom: 23px;
+        }
+        .year{
+          top: 23px;
+        }
+        .sub-title {
+          top: 51px;
+        }
+        .content{
+          top: 77px;
+        }
+      }
+      &.bottom {
+        .img{
+          top: 23px;
+        }
+        .year{
+          bottom: 109px;
+        }
+        .sub-title{
+          bottom: 86px;
+        }
+        .content{
+          bottom: 26px;
+        }
+      }
+    }
+    .img{
+      width: 42px;
+      height: 49px;
+      background-color: #555555;
+      position: absolute;
+      left:0;
+      transform: translateX(-16px);
+    }
+    .year{
+      width: 228px;
+      position: absolute;
+      font-size: 16px;
+      transform: translateX(-113px);
+      left: 0;
+    }
+    .sub-title{
+      width: 228px;
+      position: absolute;
+      left: 0;
+      transform: translateX(-113px);
+      font-size: 14px;
+      margin-top: 0;
+    }
+    .content{
+      width: 228px;
+      font-size: 12px;
+      position: absolute;
+      transform: translateX(-113px);
+      left: 0;
+      line-height: 18px;
+    }
+    
+    
+    
+  }
+  .swiper-container{
+    width: 1200px;
+    height: 364px;
+    margin-top:  30px;
+    margin-bottom: 50px;
+    .swiper-slide{
+      width: 270px;
+      height: 364px;
+      text-align: center;
+      line-height: 1;
+      .honor{
+        width: 230px;
+        height: 324px;
+        background: #ddd;
+        display: block;
+      }
+    }
   }
 }

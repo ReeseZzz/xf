@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);/*!
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://cdn.bootcss.com/Swiper/4.5.0/css/swiper.min.css);/*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
  * Copyright 2011-2019 Twitter, Inc.
@@ -11873,5 +11873,137 @@ footer .table td {
   line-height: 30px;
   text-align: center;
   color: #666;
+}
+
+.about .desc .desc-img {
+  width: 1200px;
+  height: 400px;
+  display: block;
+  background-color: #ddd;
+}
+
+.about .desc-history {
+  width: 1200px;
+  height: 1px;
+  margin-top: 169px;
+  margin-bottom: 187px;
+  background-color: #ddd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about .desc-history .dot {
+  width: 7px;
+  height: 7px;
+  display: block;
+  background-color: #bebebe;
+  border-radius: 50%;
+  position: relative;
+}
+
+.about .desc-history .dot:hover {
+  color: #0460D3;
+}
+
+.about .desc-history .dot .text-wrapper {
+  width: 228px;
+}
+
+.about .desc-history .dot.top .img {
+  bottom: 23px;
+}
+
+.about .desc-history .dot.top .year {
+  top: 23px;
+}
+
+.about .desc-history .dot.top .sub-title {
+  top: 51px;
+}
+
+.about .desc-history .dot.top .content {
+  top: 77px;
+}
+
+.about .desc-history .dot.bottom .img {
+  top: 23px;
+}
+
+.about .desc-history .dot.bottom .year {
+  bottom: 109px;
+}
+
+.about .desc-history .dot.bottom .sub-title {
+  bottom: 86px;
+}
+
+.about .desc-history .dot.bottom .content {
+  bottom: 26px;
+}
+
+.about .desc-history .img {
+  width: 42px;
+  height: 49px;
+  background-color: #555555;
+  position: absolute;
+  left: 0;
+  -webkit-transform: translateX(-16px);
+          transform: translateX(-16px);
+}
+
+.about .desc-history .year {
+  width: 228px;
+  position: absolute;
+  font-size: 16px;
+  -webkit-transform: translateX(-113px);
+          transform: translateX(-113px);
+  left: 0;
+}
+
+.about .desc-history .sub-title {
+  width: 228px;
+  position: absolute;
+  left: 0;
+  -webkit-transform: translateX(-113px);
+          transform: translateX(-113px);
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.about .desc-history .content {
+  width: 228px;
+  font-size: 12px;
+  position: absolute;
+  -webkit-transform: translateX(-113px);
+          transform: translateX(-113px);
+  left: 0;
+  line-height: 18px;
+}
+
+.about .swiper-container {
+  width: 1200px;
+  height: 364px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.about .swiper-container .swiper-slide {
+  width: 270px;
+  height: 364px;
+  text-align: center;
+  line-height: 1;
+}
+
+.about .swiper-container .swiper-slide .honor {
+  width: 230px;
+  height: 324px;
+  background: #ddd;
+  display: block;
 }
 
