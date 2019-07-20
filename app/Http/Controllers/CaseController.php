@@ -16,7 +16,8 @@ class CaseController extends Controller
     public function detail($id)
     {
         $case = Cases::findOrFail($id);
-
-        return view('cases.detail',compact('case'));
+        $prev = Cases::select('id','title')->where('id', '<', $id)->first();
+        $next = Cases::select('id','title')->where('id', '>', $id)->first();
+        return view('cases.detail',compact('case','prev','next'));
     }
 }

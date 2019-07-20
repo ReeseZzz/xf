@@ -18,18 +18,18 @@ class Controller extends BaseController
 
     public function __construct(Request $request)
     {
-        $naves = Nav::all();
+        $naves = Nav::where('parent_id', 0)->get();
         $current_nav = '';
-        foreach($naves as $v){
-            $current_nav = $v;
-            break;
-            if (Route::current()->uri() == '/' || (strpos('/'.Route::current()->uri(),$v['url']) !== false && $v['url'] != '/') ){                $current_nav = $v;
+        foreach ($naves as $v) {
+            if (Route::current()->uri() == '/' || (strpos('/' . Route::current()->uri(), $v['url']) !== false && $v['url'] != '/')) {
+                $current_nav = $v;
                 break;
             }
         }
-        $config = Configs::all()->flatMap(function($item){
-            return [$item['key'] => ['name'=>$item['name'],'value'=>$item['value']]];
+        $config = Configs::all()->flatMap(function ($item) {
+            return [$item['key'] => ['name' => $item['name'], 'value' => $item['value'], 'image' => $item['images']]];
         });
-        View::share(compact('naves','current_nav','config'));
+
+        View::share(compact('naves', 'current_nav', 'config'));
     }
 }

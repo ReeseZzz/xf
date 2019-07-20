@@ -40,6 +40,8 @@ Route::group([
         $router->post('/', 'BusinessController@store');
         $router->get('/{id}/edit', 'BusinessController@edit');
         $router->put('/{id}', 'BusinessController@update');
+        $router->delete('/{id}', 'BusinessController@destroy');
+
     });
 
     Route::group([
@@ -69,5 +71,15 @@ Route::group([
         $router->post('/', 'ConfigController@store');
         $router->get('/{id}/edit', 'ConfigController@edit');
         $router->put('/{id}', 'ConfigController@update');
+    });
+    Route::group([
+        'prefix'    => 'history',
+    ], function (Router $router) {
+        $router->get('/', 'HistoryController@index');
+        $router->get('/create', 'HistoryController@create');
+        $router->post('/', 'HistoryController@store');
+        $router->get('/{id}/edit', 'HistoryController@edit');
+        $router->put('/{id}', 'HistoryController@update');
+        $router->delete('/{id}', 'HistoryController@destroy');
     });
 });

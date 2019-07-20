@@ -4,10 +4,10 @@
 
 @section('content')
     <main role="main">
-        <div class="container pt-md-5">
+        <div class="container py-md-5">
             <div class="text-center">
-                <h2 class="mb-4">工程案例</h2>
-                <h5 class="mb-4" style="color: #999999">消防、安防、维护、器材等案例</h5>
+                <h2 class="mb-4">{{ $nav[0]['title'] }}</h2>
+                <h5 class="mb-4" style="color: #999999">{{ $nav[0]['sub_title'] }}</h5>
                 {{--<div class="border-bottom-block"></div>--}}
             </div>
             <div class="album">
@@ -41,10 +41,10 @@
         </div>
 
 
-        <div class="container">
-            <div class="pt-md-5 text-center">
-                <h1 class="jumbotron-heading">业务范围</h1>
-                <p class="lead text-muted">涵盖消防自动化等多项业务</p>
+        <div class="container py-md-5">
+            <div class="text-center">
+                <h2 class="mb-4">{{ $nav[1]['title'] }}</h2>
+                <h5 class="mb-4" style="color: #999999">{{ $nav[1]['sub_title'] }}</h5>
                 {{--<div class="border-bottom-block"></div>--}}
             </div>
             <div class="case">
@@ -124,15 +124,15 @@
         </div>
 
 
-        <div class="container">
-            <div class="pt-md-5 text-center">
-                <h1 class="jumbotron-heading">公司简介</h1>
-                <p class="lead text-muted">我们主要做什么</p>
+        <div class="container py-md-5">
+            <div class="text-center">
+                <h2 class="mb-4">{{ $nav[2]['title'] }}</h2>
+                <h5 class="mb-4" style="color: #999999">{{ $nav[2]['sub_title'] }}</h5>
                 {{--<div class="border-bottom-block"></div>--}}
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <img src="{{ asset('storage/common/case_img1.png') }}" alt="">
+                    <img style="width: 100%" src="{{ $nav[2]['cover_url'] }}" alt="">
                 </div>
                 <div class="col-md-8">
                     <div class="container">
@@ -145,15 +145,36 @@
         </div>
 
 
-        <div class="container">
-            <div class="pt-md-5 text-center">
-                <h1 class="jumbotron-heading">相关证书</h1>
-                <p class="lead text-muted">我们的资质证书</p>
+        <div class="container py-md-5">
+            <div class="text-center">
+                <h2 class="mb-4">{{ $nav[3]['title'] }}</h2>
+                <h5 class="mb-4" style="color: #999999">{{ $nav[3]['sub_title'] }}</h5>
+                {{--<div class="border-bottom-block"></div>--}}
+            </div>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    @foreach($cert as $v)
+                        <div class="swiper-slide">
+                            <img src="{{ $v['url'] }}" class="honor" alt="">
+                        </div>
+                    @endforeach
+                </div>
+                @if($cert->count() > 4)
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                @endif
+            </div>
+        </div>
+
+        <div class="container py-md-5">
+            <div class="text-center">
+                <h2 class="mb-4">{{ $nav[4]['title'] }}</h2>
+                <h5 class="mb-4" style="color: #999999">{{ $nav[4]['sub_title'] }}</h5>
                 {{--<div class="border-bottom-block"></div>--}}
             </div>
             <div class="row">
-                @foreach($cert as $v)
-                    <div class="col-md-3">
+                @foreach($logo as $v)
+                    <div class="col-md-{{ ceil(12/count($logo)) }}">
                         <div class="card mb-4 box-shadow">
                             <img class="card-img-top" src="{{ $v['url'] }}"
                                  alt="Card image cap">
@@ -161,55 +182,25 @@
                     </div>
                 @endforeach
             </div>
-            {{--<div id="myCarousel" class="carousel slide pad_010 b_k" data-ride="carousel">--}}
-            {{--<!-- 轮播（Carousel）指标 -->--}}
-            {{--<ol class="carousel-indicators">--}}
-            {{--<li data-target="#myCarousel" data-slide-to="0" class="active"></li>--}}
-            {{--<li data-target="#myCarousel" data-slide-to="1"></li>--}}
-            {{--<li data-target="#myCarousel" data-slide-to="2"></li>--}}
-            {{--</ol>--}}
-            {{--<!-- 轮播（Carousel）项目 -->--}}
-            {{--<div class="carousel-inner bor_btm">--}}
-            {{--<div class="item active" >--}}
-            {{--<div class="pic">--}}
-            {{--<img src="{{ asset('storage/common/certificate_img1.png') }}" >--}}
-            {{--<img src="{{ asset('storage/common/certificate_img2.png') }}" >--}}
-            {{--<img src="{{ asset('storage/common/certificate_img3.png') }}" >--}}
-            {{--<img src="{{ asset('storage/common/certificate_img4.png') }}" >--}}
-            {{--</div>--}}
-            {{--</div>--}}
-            {{--</div>--}}
-            {{--<!-- 轮播（Carousel）导航 -->--}}
-            {{--<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>--}}
-            {{--<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>--}}
-            {{--</div>--}}
-        </div>
-
-        <div class="container">
-            <div class="pt-md-5 text-center">
-                <h1 class="jumbotron-heading">合作伙伴</h1>
-                <p class="lead text-muted">友情链接</p>
-                {{--<div class="border-bottom-block"></div>--}}
-            </div>
-            <div class="album py-5">
-                <div class="row">
-                    @foreach($logo as $v)
-                        <div class="col-md-{{ ceil(12/count($logo)) }}">
-                            <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="{{ $v['url'] }}"
-                                     alt="Card image cap">
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
         </div>
     </main>
 
 @endsection
 @section('js')
+    <script src="{{ asset('js/swiper.min.js') }}"></script>
     <script>
         $(function () {
+            var mySwiper = new Swiper('.swiper-container', {
+                slidesPerView: 'auto',
+                spaceBetween: 20,
+                // 如果需要前进后退按钮
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+
+            })
+
             $('.case div').on('click', function () {
                 $(this).siblings('div').find('a').removeClass('active')
                 $(this).siblings('div').children('div').hide()

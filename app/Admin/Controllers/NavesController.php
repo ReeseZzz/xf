@@ -124,6 +124,8 @@ class NavesController extends Controller
             ];
         });
         $form->image('cover_url', '封面图片')->uniqueName();
+
+        $form->editor('content', '描述');
         // 两个时间显示
         $form->display('created_at', '创建时间');
         $form->display('updated_at', '修改时间');

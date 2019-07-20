@@ -2,16 +2,15 @@
 
 namespace App\Admin\Controllers;
 
+use App\Models\History;
 use App\Http\Controllers\Controller;
-use App\Models\Configs;
-use App\Models\Resources;
 use Encore\Admin\Controllers\HasResourceActions;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
 
-class ConfigController extends Controller
+class HistoryController extends Controller
 {
     use HasResourceActions;
 
@@ -24,7 +23,7 @@ class ConfigController extends Controller
     public function index(Content $content)
     {
         return $content
-            ->header('配置中心')
+            ->header('发展历史')
             ->body($this->grid());
     }
 
@@ -38,7 +37,7 @@ class ConfigController extends Controller
     public function edit($id, Content $content)
     {
         return $content
-            ->header('编辑配置')
+            ->header('编辑')
             ->body($this->form()->edit($id));
     }
 
@@ -51,7 +50,7 @@ class ConfigController extends Controller
     public function create(Content $content)
     {
         return $content
-            ->header('新增配置')
+            ->header('新增')
             ->body($this->form());
     }
 
@@ -62,21 +61,15 @@ class ConfigController extends Controller
      */
     protected function grid()
     {
-        $grid = new Grid(new Configs);
+        $grid = new Grid(new History);
 
-        $grid->id('ID');
-        $grid->key('索引');
-        $grid->name('名称');
-        $grid->value('值');
-        $grid->image('图片')->display(function($image){
-            return $image? '<img style="width:100px;" src="'.$this->value.'"/>':'';
-        });
-
-        $grid->disableFilter();
-        $grid->disableExport();
+        $grid->id('Id');
+        $grid->year('年份');
+        $grid->title('标题');
+        $grid->sub_title('子标题');
+        $grid->updated_at('更新时间');
         $grid->actions(function ($actions) {
             $actions->disableView();
-            $actions->disableDelete();
         });
         $grid->tools(function ($tools) {
             // 禁用批量删除按钮
@@ -84,7 +77,6 @@ class ConfigController extends Controller
                 $batch->disableDelete();
             });
         });
-
         return $grid;
     }
 
@@ -95,21 +87,12 @@ class ConfigController extends Controller
      */
     protected function form()
     {
-        $form = new Form(new Configs);
+        $form = new Form(new History);
 
-        $form->text('key', '索引')->rules('required',['required' => '请输入 配置项的名称']);
-
-        $form->text('name', '名称');
-        $form->text('value', '值');
-
-        $form->image('image', '图片');
-
-        $form->text('memo', '描述');
-
+        $form->text('year', '年份');
+        $form->text('title', '标题');
+        $form->text('sub_title', '子标题');
         $form->tools(function (Form\Tools $tools) {
-            // 去掉`删除`按钮
-            $tools->disableDelete();
-
             // 去掉`查看`按钮
             $tools->disableView();
         });

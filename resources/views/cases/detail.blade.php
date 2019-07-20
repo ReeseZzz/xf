@@ -17,14 +17,26 @@
                   <p><img src="{{ $case['cover_url'] }}" alt=""></p>
                   <div class="detail-content">{!! $case['content'] !!}</div>
               </div>
-              <div class="col-md-4" style="margin-bottom: 48px;">
+              <div class="col-md-4" style="margin-top: 3rem;">
                   <div class="detail-prev">
-                    <span class="prev-text">上一篇</span>
-                    <span class="prve-title">上一篇的标题</span>
+                      <span class="prev-text">上一篇</span>
+                      @if(!empty($prev))
+                          <a href="{{ route('cases.detail',['id'=> $prev['id']])}}">
+                              <span class="prve-title">{{ $prev['title'] }}</span>
+                          </a>
+                      @else
+                          <span class="prve-title">没有了</span>
+                      @endif
                   </div>
                   <div class="detail-prev">
                     <span class="prev-text">下一篇</span>
-                    <span class="prve-title">下一篇的标题</span>
+                      @if(!empty($next))
+                          <a href="{{ route('cases.detail',['id'=> $next['id']])}}">
+                              <span class="prve-title">{{ $next['title'] }}</span>
+                          </a>
+                      @else
+                          <span class="prve-title">没有了</span>
+                      @endif
                   </div>
               </div>
           </div>

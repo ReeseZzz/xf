@@ -65,6 +65,9 @@ class ResourceController extends Controller
         $grid = new Grid(new Resources);
 
         $grid->id('ID');
+        $grid->type('类型')->display(function ($type) {
+            return Resources::TYPE[$type];
+        });
         $grid->name('名称');
         $grid->url('图片')->image();
         $grid->memo('备注');
