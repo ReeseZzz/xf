@@ -10,8 +10,8 @@ class Configs extends Model
 
     public function getValueAttribute($value)
     {
-        if (strpos($value,'images') !== false ){
-            return env('APP_URL').'/uploads/'.$value;
+        if (strpos($this->image,'images') !== false ){
+            return env('APP_URL').'/uploads/'.$this->image;
         }
         return $value;
     }

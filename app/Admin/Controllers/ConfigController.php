@@ -69,7 +69,7 @@ class ConfigController extends Controller
         $grid->name('名称');
         $grid->value('值');
         $grid->image('图片')->display(function($image){
-            return $image? '<img style="width:100px;" src="'.$this->value.'"/>':'';
+            return $image ? '<img style="width:100px;" src="'.$this->value.'"/>':'';
         });
 
         $grid->disableFilter();
@@ -99,12 +99,12 @@ class ConfigController extends Controller
 
         $form->text('key', '索引')->rules('required',['required' => '请输入 配置项的名称']);
 
-        $form->text('name', '名称');
-        $form->text('value', '值');
+        $form->text('name', '名称')->default('');
+        $form->text('value', '值')->default('');
 
-        $form->image('image', '图片');
+        $form->image('image', '图片')->default('');
 
-        $form->text('memo', '描述');
+        $form->text('memo', '描述')->default('');
 
         $form->tools(function (Form\Tools $tools) {
             // 去掉`删除`按钮
