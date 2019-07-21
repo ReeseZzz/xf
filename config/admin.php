@@ -5,17 +5,17 @@ return [
     /*
      * 站点标题
      */
-    'name' => 'Laravel',
+    'name' => '安源消防',
 
     /*
      * 页面顶部 Logo
      */
-    'logo' => '<b>Laravel</b> Shop',
+    'logo' => '<b>安源消防</b>',
 
     /*
      * 页面顶部小 Logo
      */
-    'logo-mini' => '<b>LS</b>',
+    'logo-mini' => '<b>安源</b>',
 
     /*
      * Laravel-Admin 启动文件路径
@@ -167,12 +167,12 @@ return [
     |               | sidebar-mini                            |
     |---------------------------------------------------------|
      */
-    'layout' => ['sidebar-mini', 'sidebar-collapse'],
+    'layout' => ['sidebar-mini'],
 
     /*
      * 登录页背景图
      */
-    'login_background_image' => '',
+    'login_background_image' => asset('images/login.jpg'),
 
     /*
      * 显示版本

@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-@section('title')@endsection
-
 @section('content')
     <main role="main" class="about">
         <div class="container py-md-5">
