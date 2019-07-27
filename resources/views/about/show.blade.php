@@ -35,8 +35,8 @@
                 @foreach($history as $k=>$v)
                     <span class="dot @if($k%2==0) top @else bottom @endif">
                         <img src="" class="img" alt="">
-                        <img src="/storage/images/9e2f9f3de71e3cb30e472e4800cbf5b0.png" class="img">
-                        <img src="/storage/images/32888b7de4e31f43e18368b0a9bbd8cc.png" class="active-img img" >
+                        <img src="{{ asset('storage/common/icon2.png') }}" class="img">
+                        <img src="{{ asset('storage/common/icon1.png') }}" class="active-img img" >
                         <span class="year">{{ $v['year'] }}</span>
                         <span class="sub-title">{{ $v['title'] }}</span>
                         <span class="content">{{ $v['sub_title'] }}</span>
