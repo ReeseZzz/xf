@@ -21,7 +21,7 @@
                                     <div class="card mb-4 box-shadow">
                                         <a href="{{ route('cases.detail',['id'=>$v['id']]) }}">
                                             <img class="card-img-top" src="{{ $value['cover_url'] }}"
-                                                 alt="Card image cap">
+                                                 alt="Card image cap" style="height: 13.875rem;display: block;">
                                             <div class="card-body">
                                                 <h5 class="card-title">{{ $value['title'] }}</h5>
                                                 <p class="card-text text-muted">地址 : {{ $value['address'] }}</p>

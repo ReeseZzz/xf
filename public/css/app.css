@@ -11932,6 +11932,18 @@ footer .table td {
   color: #0460D3;
 }
 
+.about .desc-history .dot:hover .sub-title {
+  color: #0460D3;
+}
+
+.about .desc-history .dot:hover .img {
+  display: none;
+}
+
+.about .desc-history .dot:hover .active-img {
+  display: block;
+}
+
 .about .desc-history .dot .text-wrapper {
   width: 1.75rem;
 }
@@ -11971,11 +11983,15 @@ footer .table td {
 .about .desc-history .img {
   width: 42px;
   height: 49px;
-  background-color: #555555;
+  display: block;
   position: absolute;
   left: 0;
   -webkit-transform: translateX(-16px);
           transform: translateX(-16px);
+}
+
+.about .desc-history .active-img {
+  display: none;
 }
 
 .about .desc-history .year {
@@ -12009,7 +12025,6 @@ footer .table td {
 
 .swiper-container {
   width: 100%;
-  height: 22.75rem;
   margin-top: 1.875rem;
 }
 

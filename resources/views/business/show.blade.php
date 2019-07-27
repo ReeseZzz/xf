@@ -56,8 +56,8 @@
                                                 <div class="card mb-4 box-shadow">
                                                     <a href="{{ route('cases.detail',['id'=>$value['id']]) }}">
                                                         <img class="card-img-top" src="{{ $value['cover_url'] }}"
-                                                             alt="Card image cap">
-                                                        <div class="card-body">
+                                                             alt="Card image cap" style="height: 11.8rem;display: block;">
+                                                        <div class="card-header">
                                                             <p class="card-text text-muted">{{ $value['title'] }}</p>
                                                         </div>
                                                     </a>
