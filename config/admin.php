@@ -172,7 +172,7 @@ return [
     /*
      * 登录页背景图
      */
-    'login_background_image' => asset('images/login.jpg'),
+    'login_background_image' => public_path('images/login.jpg'),
 
     /*
      * 显示版本
@@ -203,6 +203,8 @@ return [
      * 扩展设置.
      */
     'extensions' => [
-
+        'media-manager' => [
+            'disk' => 'public'
+        ],
     ],
 ];
