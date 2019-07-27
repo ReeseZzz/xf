@@ -1,6 +1,5 @@
 /node_modules
-/public/uploads
-/storage/*.key
+/storage
 /vendor
 /.idea
 /.vscode

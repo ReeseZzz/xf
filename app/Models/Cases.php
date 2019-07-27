@@ -9,11 +9,11 @@ class Cases extends Model
     protected $table = 'ay_cases';
 
     protected $fillable = [
-        'sort_num','name','icon','icon_active'
+        'business_id','title','address','product','cover_url','content'
     ];
 
     public function getCoverUrlAttribute($value)
     {
-        return env('APP_URL').'/uploads/'.$value;
+        return asset('/storage/'.$value);
     }
 }

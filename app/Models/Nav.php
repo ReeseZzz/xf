@@ -18,7 +18,7 @@ class Nav extends Model
 
     public function getCoverUrlAttribute($value)
     {
-        return env('APP_URL').'/uploads/'.$value;
+        return asset('/storage/'.$value);
     }
 
     public function childs()

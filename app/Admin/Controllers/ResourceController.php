@@ -65,15 +65,14 @@ class ResourceController extends Controller
         $grid = new Grid(new Resources);
 
         $grid->id('ID');
-        $grid->type('类型')->display(function ($type) {
-            return Resources::TYPE[$type];
-        });
+        $grid->type('类型')->using(Resources::TYPE)->filter(Resources::TYPE);
         $grid->name('名称');
         $grid->url('图片')->image();
         $grid->memo('备注');
 
-        $grid->disableFilter();
         $grid->disableExport();
+        $grid->disableFilter();
+
         $grid->actions(function ($actions) {
             $actions->disableView();
             $actions->disableDelete();
@@ -101,7 +100,8 @@ class ResourceController extends Controller
 
         $form->radio('type', '类型')->options(Resources::TYPE);
 
-        $form->image('url', '图片')->uniqueName();
+//        $form->image('url', '图片')->uniqueName();
+        $form->cropper('url','图片');
 
         $form->tools(function (Form\Tools $tools) {
             // 去掉`删除`按钮

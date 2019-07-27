@@ -30,7 +30,7 @@ class IndexController extends Controller
     {
         $nav = Nav::where('parent_id', 2)->get();
 
-        $cert = Resources::cert()->get();
+        $cert = Resources::title()->get();
 
         $history = History::orderBy('year')->get();
 

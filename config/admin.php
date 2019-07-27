@@ -206,5 +206,8 @@ return [
         'media-manager' => [
             'disk' => 'public'
         ],
+        'cropper' => [
+            'enable' => true,
+        ]
     ],
 ];

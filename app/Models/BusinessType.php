@@ -14,11 +14,11 @@ class BusinessType extends Model
 
     public function getIconAttribute($value)
     {
-        return env('APP_URL').'/uploads/'.$value;
+        return asset('/storage/'.$value);
     }
     public function getIconActiveAttribute($value)
     {
-        return env('APP_URL').'/uploads/'.$value;
+        return asset('/storage/'.$value);
     }
 
     public function business()
