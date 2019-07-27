@@ -243,6 +243,15 @@ footer{
       position: relative;
       &:hover{
         color: #0460D3;
+        .sub-title{
+          color: #0460D3;
+        }
+        .img{
+          display: none;
+        }
+        .active-img{
+          display: block;
+        }
       }
       .text-wrapper{
         width: 1.75rem;
@@ -279,10 +288,13 @@ footer{
     .img{
       width: 42px;
       height: 49px;
-      background-color: #555555;
+      display: block;
       position: absolute;
       left:0;
       transform: translateX(-16px);
+    }
+    .active-img{
+      display: none;
     }
     .year{
       width: 228px;

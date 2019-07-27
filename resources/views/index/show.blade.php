@@ -16,7 +16,7 @@
                                 <div class="card mb-4 box-shadow">
                                     <a href="{{ route('cases.detail',['id'=>$v['id']]) }}">
                                         <img class="card-img-top" src="{{ $v['cover_url'] }}"
-                                             alt="Card image cap">
+                                             alt="Card image cap" style="width: 279px;height: 222px;display: block;">
                                         <div class="card-body">
                                             <h5 class="card-title">{{ $v['title'] }}</h5>
                                             <p class="card-text text-muted">地址：{{ $v['address'] }}</p>
@@ -174,8 +174,8 @@
                 @foreach($logo as $v)
                     <div class="col-md-{{ ceil(12/count($logo)) }}">
                         <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="{{ $v['url'] }}"
-                                 alt="Card image cap">
+                            <div class="card-img-top" style="height: 70px;background: url('{{ $v['url']}}') no-repeat center/contain"
+                                 alt="Card image cap"></div>
                         </div>
                     </div>
                 @endforeach
