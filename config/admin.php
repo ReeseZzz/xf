@@ -172,7 +172,7 @@ return [
     /*
      * 登录页背景图
      */
-    'login_background_image' => public_path('/storage/common/login.jpg'),
+    'login_background_image' => '/storage/common/login.jpg',
 
     /*
      * 显示版本
