@@ -95,7 +95,6 @@ class CasesController extends Controller
         $grid->disableExport();
         $grid->actions(function ($actions) {
             $actions->disableView();
-            $actions->disableDelete();
         });
         $grid->tools(function ($tools) {
             // 禁用批量删除按钮
@@ -159,9 +158,6 @@ class CasesController extends Controller
 
 
         $form->tools(function (Form\Tools $tools) {
-            // 去掉`删除`按钮
-            $tools->disableDelete();
-
             // 去掉`查看`按钮
             $tools->disableView();
         });
