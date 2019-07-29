@@ -1,6 +1,10 @@
 <footer style="background-image: url({{ asset('storage/common/footer.png') }});">
   <div class="container">
       <div class="row pt-5">
+{{--          <div class="col-md-4 text-left">--}}
+{{--            <p>{{ $config['hotline']['name'] }}：<span style="font-size: 1.5rem">{{ $config['hotline']['value'] }}</span></p>--}}
+{{--            <p>{{ $config['post_code_1']['name'] }}：<span class="">{{ $config['post_code_1']['value'] }}</span></p>--}}
+{{--          </div>--}}
           <div class="col-md-12 text-left">
               <div class="row">
                   <div class="col-md-4">
