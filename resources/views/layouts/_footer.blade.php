@@ -3,7 +3,6 @@
       <div class="row pt-5">
           <div class="col-md-4 text-left">
             <p>{{ $config['hotline']['name'] }}：<span style="font-size: 1.5rem">{{ $config['hotline']['value'] }}</span></p>
-            <p>{{ $config['main_address']['name'] }}：<span class="">{{ $config['main_address']['value'] }}</span></p>
             <p>{{ $config['post_code_1']['name'] }}：<span class="">{{ $config['post_code_1']['value'] }}</span></p>
           </div>
           <div class="col-md-8 text-left">
@@ -18,7 +17,7 @@
                       <p>{{ $config['address']['name'] }}：<span class="">{{ $config['address']['value'] }}</span></p>
                   </div>
                   <div class="col-md-4 text-right">
-                      <img src="{{ $config['qrcode']['value'] }}" alt="">
+                      <img style="height: 9.6rem" src="{{ $config['qrcode']['value'] }}" alt="">
                   </div>
               </div>
           </div>
