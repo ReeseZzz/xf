@@ -68,7 +68,7 @@ class BusinessTypesController extends Controller
         $grid->name('名称');
         $grid->icon('图标(默认状态)')->image();
         $grid->icon_active('图标(激活状态)')->image();
-        $grid->sort_num('排序')->sortable();
+        $grid->sort_num('排序')->editable()->sortable();
 
         $grid->created_at('添加时间');
 

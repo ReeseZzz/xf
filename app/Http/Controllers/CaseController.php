@@ -9,7 +9,7 @@ class CaseController extends Controller
 {
     public function show()
     {
-        $cats = BusinessType::with('cases')->get();
+        $cats = BusinessType::with('cases')->orderBy('sort_num')->get();
         return view('cases.show',compact('cats'));
     }
 

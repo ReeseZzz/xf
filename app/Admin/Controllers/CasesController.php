@@ -89,6 +89,8 @@ class CasesController extends Controller
 
         $grid->cover_url('封面')->image();
 
+        $grid->sort_num('排序')->editable()->sortable();
+
         $grid->created_at('添加时间');
 
         $grid->disableFilter();
@@ -149,6 +151,8 @@ class CasesController extends Controller
         })->rules('required',['required' => '请选择 所属分类']);
 
         $form->image('cover_url', '封面');
+
+        $form->number('sort_num','排序');
 
         $form->editor('content', '内容')->rules('required',['required' => '请输入 内容']);
 

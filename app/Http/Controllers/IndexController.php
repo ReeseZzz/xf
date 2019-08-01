@@ -14,10 +14,10 @@ class IndexController extends Controller
     {
         $nav = Nav::where('parent_id', 1)->get();
 
-        $businessType = BusinessType::with('business')->get();
+        $businessType = BusinessType::with('business')->orderBy('sort_num')->get();
         $businessType = collect($businessType)->chunk(4)->toArray();
 
-        $cases = Cases::limit(6)->get();
+        $cases = Cases::query()->orderBy('sort_num')->limit(6)->get();
 
         $logo = Resources::logo()->get();
 
@@ -39,7 +39,7 @@ class IndexController extends Controller
 
     public function business()
     {
-        $business = BusinessType::with(['business','cases'])->get();
+        $business = BusinessType::with(['business','cases'])->orderBy('sort_num')->get();
 
         return view('business.show', compact('business'));
     }

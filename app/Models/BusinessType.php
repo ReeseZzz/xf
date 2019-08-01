@@ -27,6 +27,6 @@ class BusinessType extends Model
     }
     public function cases()
     {
-        return $this->hasMany(Cases::class,'business_id','id');
+        return $this->hasMany(Cases::class,'business_id','id')->orderBy('sort_num');
     }
 }
