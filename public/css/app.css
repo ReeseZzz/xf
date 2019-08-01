@@ -12029,15 +12029,15 @@ footer .table td {
 }
 
 .swiper-container .swiper-slide {
-  width: 16.875rem;
-  height: 22.75rem;
+  max-width: 18.75rem;
+  max-height: 22.75rem;
   text-align: center;
   line-height: 1;
 }
 
 .swiper-container .swiper-slide .honor {
-  width: 14.375rem;
-  height: 22.75rem;
+  max-width: 18.75rem;
+  max-height: 22.75rem;
   background: #ddd;
   display: block;
 }

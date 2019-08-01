@@ -23,7 +23,7 @@ class Resources extends Model
      */
     public function scopeLogo($query)
     {
-        return $query->where('type', self::TYPE_LOGO);
+        return $query->where('type', self::TYPE_LOGO)->orderBy('sort');
     }
 
     /**
@@ -33,7 +33,7 @@ class Resources extends Model
      */
     public function scopeCert($query)
     {
-        return $query->where('type', self::TYPE_CERT);
+        return $query->where('type', self::TYPE_CERT)->orderBy('sort');
     }
     /**
      * 只包含资质的查询作用域
@@ -42,7 +42,7 @@ class Resources extends Model
      */
     public function scopeTitle($query)
     {
-        return $query->where('type', self::TYPE_TITLE);
+        return $query->where('type', self::TYPE_TITLE)->orderBy('sort');
     }
 
     public function getUrlAttribute($value)

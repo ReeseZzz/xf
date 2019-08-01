@@ -68,6 +68,7 @@ class ResourceController extends Controller
         $grid->type('类型')->using(Resources::TYPE)->filter(Resources::TYPE);
         $grid->name('名称');
         $grid->url('图片')->image();
+        $grid->sort('排序')->editable()->sortable();
         $grid->memo('备注');
 
         $grid->disableExport();
@@ -100,8 +101,11 @@ class ResourceController extends Controller
 
         $form->radio('type', '类型')->options(Resources::TYPE);
 
-//        $form->image('url', '图片')->uniqueName();
         $form->cropper('url','图片');
+
+        $form->number('sort','排序');
+
+        $form->textarea('memo','备注');
 
         $form->tools(function (Form\Tools $tools) {
             // 去掉`删除`按钮

@@ -55,8 +55,8 @@
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     @foreach($cert as $v)
-                        <div class="swiper-slide" style="width: 300px;height: 200px;">
-                            <img src="{{ $v['url'] }}" class="honor" alt="" style="width: 300px;height: 200px;">
+                        <div class="swiper-slide">
+                            <img src="{{ $v['url'] }}" class="honor" alt="">
                         </div>
                     @endforeach
                 </div>
