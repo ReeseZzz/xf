@@ -63,24 +63,24 @@
                             </li>
                         @endforeach
                     </ul>
-                    <div class="tab-content w-100 text-left" id="nav-tabContent"
-                         style="background-color: #FBFBFB">
-                        @foreach($businessType[0] as $k => $v)
-                            <div class="tab-pane fire-nav-panel fade show {{$k==0?'active':''}}" id="nav-{{$v['id']}}"
-                                 role="tabpanel" aria-labelledby="nav-home-tab">
-                                <div class="row">
-                                    @foreach($v['business'] as $child)
-                                        <div class="col-md-4">
-                                            <a class="nav-link" href="#">
-                                                <h4 class="pl-5 pt-4">{{ $child['title'] }}</h4>
-                                                <h5 class="pl-5">{!!  $child['content'] !!}</h5>
-                                            </a>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
+                    {{--<div class="tab-content w-100 text-left" id="nav-tabContent"--}}
+                         {{--style="background-color: #FBFBFB">--}}
+                        {{--@foreach($businessType[0] as $k => $v)--}}
+                            {{--<div class="tab-pane fire-nav-panel fade show {{$k==0?'active':''}}" id="nav-{{$v['id']}}"--}}
+                                 {{--role="tabpanel" aria-labelledby="nav-home-tab">--}}
+                                {{--<div class="row">--}}
+                                    {{--@foreach($v['business'] as $child)--}}
+                                        {{--<div class="col-md-4">--}}
+                                            {{--<a class="nav-link" href="#">--}}
+                                                {{--<h4 class="pl-5 pt-4">{{ $child['title'] }}</h4>--}}
+                                                {{--<h5 class="pl-5">{!!  $child['content'] !!}</h5>--}}
+                                            {{--</a>--}}
+                                        {{--</div>--}}
+                                    {{--@endforeach--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--@endforeach--}}
+                    {{--</div>--}}
                 </div>
                 <div class="text-center">
                     <ul class="nav row">
@@ -99,7 +99,7 @@
                             </li>
                         @endforeach
                     </ul>
-                   <!--  <div class="tab-content w-100 text-left" id="nav-tabContent"
+                    <div class="tab-content w-100 text-left" id="nav-tabContent"
                          style="background-color: #FBFBFB">
                         @foreach($businessType[1] as $k => $v)
                             <div class="tab-pane fire-nav-panel fade show {{$k==0?'active':''}}" id="nav-{{$v['id']}}"
@@ -116,7 +116,7 @@
                                 </div>
                             </div>
                         @endforeach
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>
