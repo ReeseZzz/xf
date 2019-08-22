@@ -99,7 +99,7 @@
                             </li>
                         @endforeach
                     </ul>
-                    <div class="tab-content w-100 text-left" id="nav-tabContent"
+                   <!--  <div class="tab-content w-100 text-left" id="nav-tabContent"
                          style="background-color: #FBFBFB">
                         @foreach($businessType[1] as $k => $v)
                             <div class="tab-pane fire-nav-panel fade show {{$k==0?'active':''}}" id="nav-{{$v['id']}}"
@@ -116,7 +116,7 @@
                                 </div>
                             </div>
                         @endforeach
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
